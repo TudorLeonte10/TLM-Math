@@ -1,22 +1,19 @@
-# 🐍 Fișiere Python compilate
+
 __pycache__/
 *.py[cod]
 *$py.class
 
-# 📦 Virtualenv
 venv/
 env/
 ENV/
 .venv/
 .Python
 
-# 📝 Fișiere editori
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
-# 🧪 Pytest, coverage, logs
 *.log
 *.cover
 coverage.*
@@ -25,24 +22,20 @@ nosetests.xml
 coverage.xml
 htmlcov/
 
-# 💾 SQLite
 *.db
 *.sqlite3
 
-# 📦 Pachete și build-uri
 *.egg
 *.egg-info/
 dist/
 build/
 .eggs/
 
-# 📄 Config personal
 *.env
 .env.*
 
-# 🚀 Docker
 *.pid
 *.pid.lock
 
-# 🧪 Redis dump (dacă ai)
+
 dump.rdb
