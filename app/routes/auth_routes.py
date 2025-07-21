@@ -6,7 +6,7 @@ from app.logging.redis_logger import log_event
 
 auth_bp = Blueprint('auth_bp', __name__)
 SECRET_KEY = "supersecret" 
-#trebuie mutat in env daca facem cu docker
+
 
 
 @auth_bp.route('/login', methods=['POST'])
