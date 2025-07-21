@@ -18,7 +18,7 @@
           <div class="col"><input id="base" type="number" class="form-control" placeholder="Base (a)"></div>
           <div class="col"><input id="exp" type="number" class="form-control" placeholder="Exponent (b)"></div>
         </div>
-        <button class="btn btn-primary mt-3" onclick="calculatePow()">Calculează</button>
+        <button class="btn btn-primary mt-3" onclick="handlePow()">Calculează</button>
         <p class="mt-2" id="pow-result"></p>
       </div>
     </div>
@@ -28,7 +28,7 @@
       <div class="card-body">
         <h5 class="card-title">Fibonacci</h5>
         <input id="fib-n" type="number" class="form-control mb-2" placeholder="n">
-        <button class="btn btn-primary" onclick="calculateFib()">Calculează</button>
+        <button class="btn btn-primary" onclick="calculateFib()",>Calculează</button>
         <p class="mt-2" id="fib-result"></p>
       </div>
     </div>
@@ -81,6 +81,22 @@
     function calculateFact() {
       const n = parseInt(document.getElementById("fact-n").value);
       postJSON(`${apiBase}/fact`, { n }, "fact-result");
+    }
+    function displayExecutionPow(){
+      fetch('/api/calculate/pow', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ base: 2, exp: 8 })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('result').textContent = data.result;
+        document.getElementById('pow-execTime').textContent = data.execution_time_ms.toFixed(3);
+      });
+    }
+    function handlePow(){
+      calculatePow();
+      displayExecutionPow();
     }
   </script>
 </body>

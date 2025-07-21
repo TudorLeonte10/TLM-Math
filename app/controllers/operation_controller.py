@@ -17,7 +17,7 @@ def calculate_pow():
         op = Operation(operation="pow", input_data=f"base={data.base},exp={data.exp}", result=str(result))
         db.session.add(op)
         db.session.commit()
-        return jsonify(ResultResponse(result=result).model_dump()), 200
+        return jsonify(result), 200
     except ValidationError as ve:
         return jsonify({"error": ve.errors()}), 422
     except Exception as e:
