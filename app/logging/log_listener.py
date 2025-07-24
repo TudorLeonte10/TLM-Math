@@ -2,7 +2,11 @@ import redis
 import json
 import os
 
-r = redis.Redis(host='localhost', port=6379, db=0)
+r = redis.Redis(
+    host=os.getenv("REDIS_HOST", "localhost"),
+    port=int(os.getenv("REDIS_PORT", 6379)),
+    decode_responses=True
+)
 p = r.pubsub()
 p.subscribe('logs')
 

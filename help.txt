@@ -1,0 +1,9 @@
+# Pornesc containerul
+docker-compose up
+
+# Pornesc containerul dupa modificari
+docker-compose up --build
+
+# Opresc containerul
+docker compose down 
+
