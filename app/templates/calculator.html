@@ -15,8 +15,8 @@
       <div class="card-body">
         <h5 class="card-title">Power (a^b)</h5>
         <div class="row g-2">
-          <div class="col"><input id="base" type="number" class="form-control" placeholder="Base (a)"></div>
-          <div class="col"><input id="exp" type="number" class="form-control" placeholder="Exponent (b)"></div>
+          <div class="col"><input id="base" type="number" class="form-control" placeholder="Base (a)" onkeydown="blockE(event)"></div>
+          <div class="col"><input id="exp" type="number" class="form-control" placeholder="Exponent (b)" onkeydown="blockE(event)"></div>
         </div>
         <button class="btn btn-primary mt-3" onclick="calculatePow()">Calculează</button>
         <p class="mt-2" id="pow-result"></p>
@@ -82,6 +82,13 @@
       const n = parseInt(document.getElementById("fact-n").value);
       postJSON(`${apiBase}/fact`, { n }, "fact-result");
     }
+
+    function blockE(event) {
+      if (event.key === 'e' || event.key === 'E' || event.key === '+' || event.key === '-' || event.key === '.' || event.key === ' ') {
+        event.preventDefault();
+      }
+    }
+
   </script>
 </body>
 </html>

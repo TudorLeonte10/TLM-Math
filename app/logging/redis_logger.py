@@ -7,7 +7,8 @@ import os
 r = redis.Redis(
     host=os.getenv("REDIS_HOST", "localhost"),
     port=int(os.getenv("REDIS_PORT", 6379)),
-    db=0
+    db=0,
+    decode_responses=True
 )
 
 def log_event(event, operation, input_data=None, result=None, error=None):
