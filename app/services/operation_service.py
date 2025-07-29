@@ -13,18 +13,15 @@ def power(base, exp):
     if base == 0 and exp == 0:
         raise ValueError("0 raised to the power of 0 is undefined")
 
-    if base == math.e or exp == math.e:
-        raise ValueError("Base and exponent cannot be Euler's number (e) for this operation")
-
     key = ('power', base, exp)
     
     if key in operation_cache:
         return operation_cache[key]
     
-    result = base ** exp
-
-    if result > MAX_RESULT:
-        raise ValueError(f"Result must be less than or equal to {MAX_RESULT} - Overflow risk")
+    try:
+        result = base ** exp
+    except OverflowError:
+        raise ValueError("Result exceeds maximum limit - Overflow risk")
 
     operation_cache[key] = result
     
@@ -32,7 +29,7 @@ def power(base, exp):
 
 def fibonacci(n):
     """Calculates the nth Fibonacci number."""
-    MAX_INPUT = 10000
+    MAX_INPUT = 1476
     key = ('fibonacci', n)
     if key in operation_cache:
         return operation_cache[key]
