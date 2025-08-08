@@ -1,4 +1,5 @@
 # TLM-Math
+Proiect realizat de Leonte Tudor, Maciuc Mihai si Arama Luigi Emanuel
 
 TLM-Math este o aplicație web dezvoltată cu Flask, organizată pe arhitectură MVC, ce oferă operații matematice (putere, factorial, Fibonacci) prin API-uri securizate cu JWT. Utilizatorii pot accesa funcționalitățile printr-un dashboard web, cu interfață modernă, iar accesul la rute este controlat în funcție de rol (ex: admin, user).
 
@@ -18,3 +19,4 @@ TLM-Math este o aplicație web dezvoltată cu Flask, organizată pe arhitectură
 ## Tehnologii
 - Python, Flask, Pydantic, JWT
 
+!! Din cauza unor probleme tehnice dar si prin conventie cu echipa, varianta finala a proiectului se afla pe branch-ul dockerus !!
